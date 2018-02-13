@@ -1,0 +1,23 @@
+<nos>
+  <nos1>
+    <no
+      atributo1="teste1"
+      atributo2="teste2"
+    />
+    <no
+      atributo1="teste3"
+      atributo2="teste4"
+    />
+  </nos1>
+
+  <nos2>
+    <no
+      atributo1="teste5"
+      atributo2="teste6"
+    />
+    <no
+      atributo1="teste7"
+      atributo2="teste8"
+    />
+  </nos2>
+</nos>

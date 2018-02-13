@@ -1,41 +1,56 @@
 import os
 import glob
 import shutil
-from xml.etree.ElementTree import Element, ElementTree
 
-# current_directory = os.path.dirname(os.path.abspath(__file__))
+current_directory = os.path.dirname(os.path.abspath(__file__))
 
-# os.chdir('teste2')
+arquivos = [arq for arq in current_directory if os.path.isfile(arq)]
+pasta = "c:\\andeserp"
 
-# files = glob.glob('*.txt')
+caminhos = [os.path.join(pasta, nome) for nome in os.listdir(pasta)]
+#print caminhos
+
+arquivos = [arq for arq in caminhos if os.path.isfile(arq)]
+# print arquivos
+
+bpls = [arq for arq in arquivos if arq.lower().endswith(".bat")]
+print bpls
+
+# files = glob.glob(current_directory + 'app' + '*.log')
 # for file in files:
 #     print(file)
 #     os.unlink(file)
 
-# shutil.rmtree(current_directory + '\\teste2')
+        
+# REM - PARA SERVIÇO
+# net stop AndesLogTransfer
+# REM DESINSTALA SERVIÇOS
+# c:\andesERP\AndesLogTransfer.exe /uninstall /s
+# cd\
+# cd andeserp
+# del AndesLogTransfer.exe AndesUpdateConfig.exe AndesUpdateGUI.exe
+# del AndesLogTransfer.zip AndesUpdateConfig.zip AndesUpdateGUI.zip
+# del AndesLogTransfer.log
+# cd app
+# del AndesLogTransfer.exe
+# del AndesLogTransfer.zip
+# del AndesUpdateConfig.exe
+# del AndesUpdateConfig.zip
+# del AndesUpdateGUI.exe
+# del AndesUpdateGUI.zip
+# cd ..
+# cd log
+# del *.log
+# pause
+
+# remover diretório inteiro
+#shutil.rmtree(current_directory + '\\teste2')
+
+# tree = ET.parse('arquivos\AndesConfiguracao.xml')
+
+
+
     
-# root = Element('Agenda')
-# pessoa = Element('Pessoa') 
-# cliente = Element('Cliente', nome='Guilherme', idade='19', peso='71', altura='1.63') 
-# root.append(pessoa)
-# root.append(cliente)
-# ElementTree(root).write('agenda.xml');
-
-tree = ElementTree(file='arquivos\\agenda.xml')
-r = tree.getroot()
-pessoa = r.find('Pessoa') 
-cliente = r.find('Cliente') 
-print(cliente.tag, cliente.attrib) 
-
-andesConfig = ElementTree(file='arquivos\\AndesConfiguracao.xml')
-a = andesConfig.getroot()
-bancos = a.find('bancos')
-banco = a.banco.find('dataBase')
-#db = bancos.find('caminhoAplicativos')
-print(banco.tag, banco.attrib)
-
-
-
 
 # 1 - No banco original de produção precisa ficar assim:
 # Sweep interval = 0
